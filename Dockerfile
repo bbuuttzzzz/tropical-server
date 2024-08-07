@@ -6,7 +6,7 @@ FROM steamcmd/steamcmd:latest
 # -----------------------------------------------------
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive \
-    apt-get -y install lib32stdc++6 lib32tinfo5 \
+    apt-get -y install lib32stdc++6 \
  && apt-get -y autoremove \
  && apt-get -y clean \
  && apt-get -y purge \
