@@ -1,6 +1,12 @@
 FROM steamcmd/steamcmd:latest
 
 # -----------------------------------------------------
+# create steam user
+# -----------------------------------------------------
+RUN useradd -ms /bin/bash steam
+RUN mkdir -p /steam/gmod && chown steam:steam /steam/gmod
+
+# -----------------------------------------------------
 # install needed packages for garrysmod
 # install cstrike and garrysmod and configure the mount
 # -----------------------------------------------------
@@ -37,6 +43,7 @@ USER steam
 # mount yourself: /steam/gmod/garrysmod/cfg/server.cfg \
 VOLUME /steam/gmod/garrysmod/data/ \
        /steam/gmod/garrysmod/cache/srcds/
+
 
 # -----------------------------------
 # only port 27015 has to be forwarded
