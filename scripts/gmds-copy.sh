@@ -75,7 +75,7 @@ if [[ $REVERT || $HARD ]]; then
                 echo -e "${YLW}rm -rf $1/$DESTINATION/`basename $SOURCE`${NC}"
             fi
         fi
-    done <gmds-copy-folders
+    done <scripts/gmds-copy-folders.txt
 
     if [[ -z $FORCE ]]; then
         read -p "Really remove these folders? Yy/n" -n 1 -r
@@ -88,7 +88,7 @@ if [[ $REVERT || $HARD ]]; then
                 if [[ ${SOURCE:0:1} != "#" ]]; then
                     rm -rf $1/$DESTINATION/`basename $SOURCE`
                 fi
-            done <gmds-copy-folders
+            done <scripts/gmds-copy-folders.txt
         fi
     fi
 fi
@@ -101,5 +101,5 @@ if [[ -z $REVERT ]]; then
             mkdir -p $1/$DESTINATION
             cp -ru $SOURCE $1/$DESTINATION/
         fi
-    done <gmds-copy-folders
+    done <scripts/gmds-copy-folders.txt
 fi
