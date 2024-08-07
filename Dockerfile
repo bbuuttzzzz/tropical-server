@@ -47,10 +47,6 @@ EXPOSE 27015:27015/tcp 27015:27015/udp
 WORKDIR /steam/gmod
 ENTRYPOINT ["./srcds_run", "-game", "garrysmod", "-nohltv", "-norestart"]
 
-# ---------------------------------------------------------------------
-# change the command to change parameters and set a workshop-collection
-# ---------------------------------------------------------------------
-CMD ["+gamemode", "terrortown", "-maxplayers", "32", "+map", "gm_construct"]
 
 COPY addons /steam/gmod/garrysmod/addons
 COPY gamemodes /steam/gmod/garrysmod/gamemodes
@@ -58,4 +54,4 @@ COPY data /steam/gmod/garrysmod/data
 COPY server.cfg /steam/gmod/garrysmod/cfg/server.cfg
 COPY mount.cfg /steam/gmod/garrysmod/fcg/server.cfg
 
-CMD ["-dev", "+gamemode", "terrortown", "-maxplayers", "12", "+map", "ttt_biocube", "+rcon", "nohacko", "+host_workshop_collection", "2258099756", "sv_setsteamaccount", "0F71CE9C4029E3698FAD3994C7CC6985"]
+CMD ["-dev", "+gamemode", "zombiesurvival", "-maxplayers", "24", "+map", "zm_4ngry_quaruntine", "+rcon", "nohacko", "+host_workshop_collection", "1479350474", "sv_setsteamaccount", "0F71CE9C4029E3698FAD3994C7CC6985"]
