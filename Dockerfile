@@ -24,7 +24,7 @@ RUN apt-get update \
 # -----------------------------------------------
 # change to the executing user from the baseimage
 # -----------------------------------------------
-RUN groupadd -r steam && useradd -r -g steam steam
+RUN useradd -ms /bin/bash steam
 RUN mkdir -p /steam/gmod && chown steam:steam /steam/gmod
 USER steam
 
