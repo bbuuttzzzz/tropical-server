@@ -29,8 +29,6 @@ RUN apt-get update \
 # -----------------------------------------------
 # change to the executing user from the baseimage
 # -----------------------------------------------
-RUN useradd -ms /bin/bash steam
-RUN mkdir -p /steam && chown steam:steam /steam
 USER steam
 
 # ---------------------------------------
