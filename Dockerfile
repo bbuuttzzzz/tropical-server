@@ -10,10 +10,9 @@ RUN mkdir -p /steam && chown steam:steam /steam
 # install needed packages for garrysmod
 # install cstrike and garrysmod and configure the mount
 # -----------------------------------------------------
-RUN add-apt-repository universe \
- && apt-get update \
- && DEBIAN_FRONTEND=noninteractive \ 
- && apt-get -y install lib32stdc++6 libncurses5 libncurses5:i386 \
+RUN apt-get update \
+ && DEBIAN_FRONTEND=noninteractive \
+    apt-get -y install lib32stdc++6 \
  && apt-get -y autoremove \
  && apt-get -y clean \
  && apt-get -y purge \
