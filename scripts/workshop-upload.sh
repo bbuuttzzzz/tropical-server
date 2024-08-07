@@ -1,3 +1,4 @@
+#!/bin/bash
 GMOD_ROOT="/q/Steam/steamapps/common/GarrysMod"
 
 set -e
