@@ -1,6 +1,4 @@
-FROM marcermarc/steamcmd:latest
-
-LABEL maintainer "docker@marcermarc.de"
+FROM steamcmd/steamcmd:latest
 
 # -----------------------------------------------------
 # install needed packages for garrysmod
