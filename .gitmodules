@@ -16,3 +16,6 @@
 [submodule "gamemodes/zombiesurvival_modded"]
 	path = gamemodes/zombiesurvival_modded
 	url = git@github.com:bbuuttzzzz/tropical-zs.git
+[submodule "addons/d3bot-tropical"]
+	path = addons/d3bot-tropical
+	url = https://github.com/orecros/D3bot
