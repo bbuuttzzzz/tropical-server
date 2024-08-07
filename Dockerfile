@@ -24,6 +24,7 @@ RUN apt-get update \
 # -----------------------------------------------
 # change to the executing user from the baseimage
 # -----------------------------------------------
+RUN groupadd -r steam && useradd -r -g steam steam
 USER steam
 
 # ---------------------------------------
