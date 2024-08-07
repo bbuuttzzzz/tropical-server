@@ -25,6 +25,7 @@ RUN apt-get update \
 # change to the executing user from the baseimage
 # -----------------------------------------------
 RUN groupadd -r steam && useradd -r -g steam steam
+RUN mkdir -p /steam/gmod && chown steam:steam /steam/gmod
 USER steam
 
 # ---------------------------------------
@@ -34,7 +35,6 @@ USER steam
 # * the cache of workshop-downloads
 # ---------------------------------------
 # mount yourself: /steam/gmod/garrysmod/cfg/server.cfg \
-RUN chown steam:steam /steam/gmod/garrysmod
 VOLUME /steam/gmod/garrysmod/data/ \
        /steam/gmod/garrysmod/cache/srcds/
 
