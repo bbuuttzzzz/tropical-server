@@ -4,7 +4,7 @@ FROM steamcmd/steamcmd:latest
 # create steam user
 # -----------------------------------------------------
 RUN useradd -ms /bin/bash steam
-RUN mkdir -p /steam/gmod && chown steam:steam /steam/gmod
+RUN mkdir -p /steam && chown steam:steam /steam
 
 # -----------------------------------------------------
 # install needed packages for garrysmod
@@ -17,21 +17,20 @@ RUN apt-get update \
  && apt-get -y clean \
  && apt-get -y purge \
  && su -l steam -c " \
-        /steam/cmd/steamcmd.sh \
+        steamcmd \
+         +force_install_dir /steam/ \
          +login anonymous \
-         +force_install_dir /steam/cstrike \
          +app_update 232330 validate \
-         +force_install_dir /steam/gmod \
          +app_update 4020 validate \
          +quit \
-     && echo '"mountcfg"{"cstrike" "/steam/cstrike"}' >> /steam/gmod/garrysmod/cfg/mount.cfg \
+     && echo '"mountcfg"{"cstrike" "/steam/cstrike"}' >> /steam/garrysmod/cfg/mount.cfg \
     "
 
 # -----------------------------------------------
 # change to the executing user from the baseimage
 # -----------------------------------------------
 RUN useradd -ms /bin/bash steam
-RUN mkdir -p /steam/gmod && chown steam:steam /steam/gmod
+RUN mkdir -p /steam && chown steam:steam /steam
 USER steam
 
 # ---------------------------------------
@@ -40,9 +39,9 @@ USER steam
 # * the data folder (used by some addons)
 # * the cache of workshop-downloads
 # ---------------------------------------
-# mount yourself: /steam/gmod/garrysmod/cfg/server.cfg \
-VOLUME /steam/gmod/garrysmod/data/ \
-       /steam/gmod/garrysmod/cache/srcds/
+# mount yourself: /steam/garrysmod/cfg/server.cfg \
+VOLUME /steam/garrysmod/data/ \
+       /steam/garrysmod/cache/srcds/
 
 
 # -----------------------------------
@@ -50,14 +49,14 @@ VOLUME /steam/gmod/garrysmod/data/ \
 # -----------------------------------
 EXPOSE 27015:27015/tcp 27015:27015/udp
 
-WORKDIR /steam/gmod
+WORKDIR /steam
 ENTRYPOINT ["./srcds_run", "-game", "garrysmod", "-nohltv", "-norestart"]
 
 
-COPY addons /steam/gmod/garrysmod/addons
-COPY gamemodes /steam/gmod/garrysmod/gamemodes
-COPY data /steam/gmod/garrysmod/data
-COPY server.cfg /steam/gmod/garrysmod/cfg/server.cfg
-COPY mount.cfg /steam/gmod/garrysmod/fcg/server.cfg
+COPY addons /steam/garrysmod/addons
+COPY gamemodes /steam/garrysmod/gamemodes
+COPY data /steam/garrysmod/data
+COPY server.cfg /steam/garrysmod/cfg/server.cfg
+COPY mount.cfg /steam/garrysmod/fcg/server.cfg
 
 CMD ["-dev", "+gamemode", "zombiesurvival", "-maxplayers", "24", "+map", "zm_4ngry_quaruntine", "+rcon", "nohacko", "+host_workshop_collection", "1479350474", "sv_setsteamaccount", "0F71CE9C4029E3698FAD3994C7CC6985"]
