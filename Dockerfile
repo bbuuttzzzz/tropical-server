@@ -55,6 +55,6 @@ COPY addons /steam/garrysmod/addons
 COPY gamemodes /steam/garrysmod/gamemodes
 COPY data /steam/garrysmod/data
 COPY server.cfg /steam/garrysmod/cfg/server.cfg
-COPY mount.cfg /steam/garrysmod/fcg/server.cfg
+COPY mount.cfg /steam/garrysmod/cfg/server.cfg
 
 CMD ["-dev", "+gamemode", "zombiesurvival", "-maxplayers", "24", "+map", "zm_4ngry_quaruntine", "+rcon", "nohacko", "+host_workshop_collection", "1479350474", "sv_setsteamaccount", "0F71CE9C4029E3698FAD3994C7CC6985"]
