@@ -18,4 +18,4 @@
 	url = git@github.com:bbuuttzzzz/tropical-zs.git
 [submodule "addons/d3bot-tropical"]
 	path = addons/d3bot-tropical
-	url = https://github.com/orecros/D3bot
+	url = git@github.com:bbuuttzzzz/D3bot
