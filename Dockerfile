@@ -37,6 +37,7 @@ USER steam
 # * the cache of workshop-downloads
 # ---------------------------------------
 # mount yourself: /steam/garrysmod/cfg/server.cfg \
+RUN mkdir /steam/garrysmod/data && chown steam /steam/garrysmod/data
 VOLUME /steam/garrysmod/data/ \
        /steam/garrysmod/cache/srcds/
 
