@@ -10,7 +10,7 @@
         "scripts*",
         ".git*",
         "Dockerfile",
-        "gamemodes/zombiesurvival_modded/content",
+        "gamemodes/zombiesurvival_modded/content*",
         "gamemodes/zombiesurvival_modded/workshop512.jpg",
         "gamemodes/zombiesurvival_modded/gamemode/zombieclasses_old*",
         "gamemodes/zombiesurvival_modded/entities/oldweapons*",
