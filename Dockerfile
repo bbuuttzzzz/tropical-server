@@ -38,8 +38,10 @@ USER steam
 # ---------------------------------------
 # mount yourself: /steam/garrysmod/cfg/server.cfg \
 RUN mkdir /steam/garrysmod/data && chown steam /steam/garrysmod/data
+RUN mkdir /steam/steam_cache && chown steam /steam/steam_cache
+
 VOLUME /steam/garrysmod/data/ \
-       /steam/garrysmod/cache/srcds/
+       /steam/steam_cache
 
 
 # -----------------------------------
