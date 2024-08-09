@@ -1,0 +1,16 @@
+{
+    "title" : "Tropical ZS Content",
+    "type" : "ServerContent",
+    "tags" : [ "fun" ],
+    "ignore" :
+    [
+        "*.txt",
+        "*.md",
+        "*.fgd",
+        "*.vtx",
+        "*.js",
+        "*.cfg",
+        "*.gma",
+        "workshop512.jpg"
+    ]
+}
