@@ -13,7 +13,7 @@
 [submodule "addons/tropical-weapon-placer"]
 	path = addons/tropical-weapon-placer
 	url = https://github.com/kklluuttzz/tropical-weapon-placer.git
-[submodule "gamemodes/zombiesurvival_modded"]
+[submodule "gamemodes/zombiesurvival"]
 	path = gamemodes/zombiesurvival
 	url = git@github.com:bbuuttzzzz/tropical-zs.git
 [submodule "addons/d3bot-tropical"]
