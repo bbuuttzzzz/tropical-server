@@ -1,4 +1,4 @@
 #!/bin/bash
-cd gamemodes/zombiesurvival_modded
+cd gamemodes/zombiesurvival
 git pull
 cd -

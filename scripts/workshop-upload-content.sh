@@ -8,7 +8,7 @@ rm -rf /tmp/addon
 mkdir /tmp/addon
 
 cp scripts/zs-content-workshop-addon.json /tmp/addon/addon.json
-cp -r gamemodes/zombiesurvival_modded/content/* /tmp/addon/
+cp -r gamemodes/zombiesurvival/content/* /tmp/addon/
 cd /tmp/addon
 
 "$GMOD_ROOT/bin/gmad.exe" create -folder . ".gma"
