@@ -58,7 +58,6 @@ ENTRYPOINT ["./srcds_run", "-game", "garrysmod", "-nohltv", "-norestart"]
 COPY addons /steam/garrysmod/addons
 COPY gamemodes /steam/garrysmod/gamemodes
 COPY data /steam/garrysmod/data
-COPY server.cfg /steam/garrysmod/cfg/server.cfg
-COPY mount.cfg /steam/garrysmod/cfg/mount.cfg
+COPY cfg /steam/garrysmod/cfg/
 
 CMD ["-dev", "+gamemode zombiesurvival", "-maxplayers 24", "+map zm_4ngry_quaruntine", "+rcon nohacko", "+host_workshop_collection 1479350474"]
