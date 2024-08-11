@@ -41,9 +41,6 @@ RUN mkdir /steam/garrysmod/data && chown steam /steam/garrysmod/data
 RUN mkdir /steam/garrysmod/cache && chown steam /steam/garrysmod/cache
 RUN mkdir /steam/steam_cache && chown steam /steam/steam_cache
 
-# This is not secure. i dont care but you might care
-ARG STEAM_TOKEN
-
 VOLUME /steam/garrysmod/data/ \
        /steam/garrysmod/cache/srcds/ \
        /steam/steam_cache
@@ -64,9 +61,4 @@ COPY data /steam/garrysmod/data
 COPY server.cfg /steam/garrysmod/cfg/server.cfg
 COPY mount.cfg /steam/garrysmod/cfg/mount.cfg
 
-CMD ["-dev", "+gamemode",
-       "zombiesurvival", "-maxplayers",
-       "24", "+map", "zm_4ngry_quaruntine",
-       "+rcon", "nohacko",
-       "+host_workshop_collection", "1479350474",
-       "sv_setsteamaccount", $STEAM_TOKEN]
+CMD ["-dev", "+gamemode zombiesurvival", "-maxplayers 24", "+map zm_4ngry_quaruntine", "+rcon nohacko", "+host_workshop_collection 1479350474"]
