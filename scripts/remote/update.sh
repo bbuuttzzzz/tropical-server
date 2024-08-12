@@ -38,7 +38,7 @@ fi
 if [ "$SKIP_BUILD" = false ]; then
     docker build --tag tropicalvacation/tropical-zs:latest \
        --build-arg STEAM_TOKEN=681A198C9885A558DD87958DDC32F91A \
-       .
+       /root/src/tropical-server/
 else
     echo "Skipping docker build..."
 fi
