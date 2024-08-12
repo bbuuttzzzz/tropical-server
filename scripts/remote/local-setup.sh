@@ -30,7 +30,7 @@ mkdir /root/mount
 mkdir /root/mount/data
 mkdir /root/mount/gmodcache
 mkdir /root/mount/steamcache
-chmod 777 /root/mount
+chmod -R 777 /root/mount
 
 # get and clone repo
 mkdir /root/src/
@@ -39,7 +39,3 @@ git clone git@github.com:bbuuttzzzz/tropical-server.git
 cd tropical-server
 git submodule update --recursive --init
 cd /root/
-
-# run update
-chmod +x /root/scripts/update.sh
-/root/scripts/update.sh --skip-pull
