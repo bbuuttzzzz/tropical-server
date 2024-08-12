@@ -26,16 +26,20 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 sudo service docker start
 
 # set up mount folder
-mkdir /root/mount
-mkdir /root/mount/data
-mkdir /root/mount/gmodcache
-mkdir /root/mount/steamcache
+mkdir -p /root/mount/data
+mkdir -p /root/mount/gmodcache
+mkdir -p /root/mount/steamcache
 chmod -R 777 /root/mount
 
 # get and clone repo
-mkdir /root/src/
+mkdir -p /root/src/
 cd /root/src/
-git clone git@github.com:bbuuttzzzz/tropical-server.git
+
+#just in case it failed the last time, delete tropical-server existing folder
+rm -rf tropical-server
+
+GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+git clone https://github.com/bbuuttzzzz/tropical-server.git
 cd tropical-server
 git submodule update --recursive --init
 cd /root/
