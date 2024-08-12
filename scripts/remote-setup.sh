@@ -66,7 +66,7 @@ ssh-keygen -R "$server_ip"
 ssh -i "$ssh_key_path" root@"$server_ip" "mkdir -p /root/scripts"
 
 # Copy local scripts to the server's /root/scripts directory
-scp -i "$ssh_key_path" scripts/excluded/remote/* root@"$server_ip":/root/scripts/
+scp -i "$ssh_key_path" scripts/remote/* root@"$server_ip":/root/scripts/
 
 # Run /root/scripts/local-setup.sh on the server
 ssh -i "$ssh_key_path" root@"$server_ip" "chmod +x /root/scripts/local-setup.sh"
