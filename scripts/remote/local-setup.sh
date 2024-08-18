@@ -45,4 +45,4 @@ git submodule update --recursive --init
 cd /root/
 
 # Copy data folder
-cp -p /src/tropical-server/data/* /root/mount/data/
+cp -pr /root/src/tropical-server/data/* /root/mount/data/
