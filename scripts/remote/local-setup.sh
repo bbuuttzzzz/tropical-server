@@ -43,3 +43,6 @@ git clone https://github.com/bbuuttzzzz/tropical-server.git
 cd tropical-server
 git submodule update --recursive --init
 cd /root/
+
+# Copy data folder
+cp -p /src/tropical-server/data/* /root/mount/data/
